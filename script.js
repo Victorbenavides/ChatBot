@@ -138,6 +138,12 @@ function sendMessage() {
     }, 1000); // Simular un retraso inicial de 1 segundo
 }
 
+
+window.onload = function () {
+    // Mostrar sugerencias al cargar la página
+    showSuggestions();
+};
+
 // Función para mostrar las sugerencias
 function showSuggestions() {
     const chatBody = document.getElementById("chatBody");
@@ -189,5 +195,6 @@ document.getElementById('toggleTheme').addEventListener('click', () => {
 document.getElementById('changeLanguage').addEventListener('click', () => {
     alert('La función de cambio de idioma estará disponible pronto.');
 });
-
-// Función para enviar mensaje (similar a tu script)
+window.onload = function () {
+    showSuggestions(); // Mostrar sugerencias al cargar la página
+};
