@@ -194,7 +194,7 @@ userInput.addEventListener('keydown', function(event) {
         sendMessage();
     }
 });
-// Función para cambiar el tema
+// Función para cambiar el tema oscuro
 document.getElementById('toggleTheme').addEventListener('click', () => {
     document.body.classList.toggle('dark');
     const themeButton = document.getElementById('toggleTheme');
