@@ -145,12 +145,12 @@ body.dark .chat-footer input{
 
 .chat-footer input::placeholder {
     color: #888; /* Color del placeholder en modo claro */
-    opacity: 1; /* Asegúrate de que sea visible */
+    opacity: 1; 
 }
 
 body.dark .chat-footer input::placeholder {
     color: #fdfdfd; /* Color del placeholder en modo oscuro */
-    opacity: 1; /* Asegúrate de que sea visible */
+    opacity: 1; 
 }
 
 .chat-footer button {
