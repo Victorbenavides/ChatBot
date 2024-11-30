@@ -59,12 +59,17 @@ function typeMessage(element, message, speed = 100) {
     }, speed);
 }
 
-userInput.addEventListener('keydown', function(event) {
-    if (event.key === 'Enter') {
-        sendMessage();
-    }
-});
+// Función para desactivar el botón de enviar
+function disableSendButton() {
+    const sendButton = document.getElementById("sendButton");
+    sendButton.disabled = true; // Desactiva el botón
+}
 
+// Función para activar el botón de enviar
+function enableSendButton() {
+    const sendButton = document.getElementById("sendButton");
+    sendButton.disabled = false; // Activa el botón
+}
 
 // Función para enviar el mensaje y desplazarse hacia abajo
 function sendMessage() {
@@ -101,6 +106,7 @@ function sendMessage() {
     botMessageElement.textContent = "..."; // Mostrar mensaje de carga
     chatBody.appendChild(botMessageElement);
 
+    disableSendButton();
     // Limpiar el input
     userInput.value = "";
 
@@ -132,6 +138,7 @@ function sendMessage() {
         showSuggestions(); // Mostrar sugerencias después de que termine de escribir
         userInput.disabled = false; // Habilitar la entrada del usuario
         userInput.focus(); // Enfocar la entrada del usuario
+        enableSendButton();
 
         // Desplazar el chat hacia abajo después de la respuesta del bot
         chatBody.scrollTop = chatBody.scrollHeight;
@@ -143,6 +150,7 @@ window.onload = function () {
     // Mostrar sugerencias al cargar la página
     showSuggestions();
 };
+
 
 // Función para mostrar las sugerencias
 function showSuggestions() {
@@ -156,7 +164,9 @@ function showSuggestions() {
         suggestionButton.className = "suggestion-button";
         suggestionButton.textContent = suggestion;
         suggestionButton.addEventListener("click", function () {
-            document.getElementById("userInput").value = suggestion; // Coloca el texto sugerido en el input
+            document.getElementById("userInput").value = suggestion;
+            suggestionButton.disabled = true;
+             // Coloca el texto sugerido en el input
         });
         suggestionsElement.appendChild(suggestionButton);
     });
