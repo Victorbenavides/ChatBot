@@ -17,4 +17,4 @@ Este proyecto es un ChatBot estático diseñado para proporcionar información �
 ## Instalación y uso 🚀
 1. Clona este repositorio:
    ```bash
-   git clone https://github.com/Victorbenavides/ChatBot-Tienda-Comida.git
+   git clone https://github.com/Victorbenavides/ChatBot.git
